@@ -1,0 +1,13 @@
+Package: iotc.data.reference.datasets.SF.std
+Type: Package
+Title: All official IOTC SF standardized datasets
+Version: 2023.07.12
+Author: IOTC Secretariat (data section)
+Maintainer: IOTC Secretariat (data section) <IOTC-Statistics@fao.org>
+Description: The current content of all IOTC SF datasets (standardized) in a format suitable for usage within the IOTC R libraries
+License: TBD
+Encoding: UTF-8
+LazyData: true
+Depends: 
+    R (>= 2.10)
+RoxygenNote: 7.2.3
