@@ -1,29 +1,105 @@
-# README #
+# Standardized size-frequency datasets
 
-This README would normally document whatever steps are necessary to get your application up and running.
+This R project is used to build the `iotc.data.reference.datasets.SF.std` R package and contains all necessary code and resources to create the **standardized** size-frequency datasets for all species for which there is any type of length or weight measurement available in the IOTC databases **and** the corresponding conversion equations towards the species-specific default size measurements.
 
-### What is this repository for? ###
+It uses the `iotc.base.common.data` library to access the current data storage (`IOTDB`) but does not explicitly depends on it. This means that the final package can be used in other R projects / scripts that need any of the exported datasets, without introducing any type of dependency from the IOTC databases.
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+In fact, *live* access to the IOTC databases is only required when **building** the project.
 
-### How do I get set up? ###
+Likewise, the project uses the `iotc.data.reference.datasets.SF.raw` and `iotc.base.common.std` packages to access the raw size frequency data and the size-frequency standardization functions included in the IOTC libraries, but only at build time.
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+## How to initialise the datasets
 
-### Contribution guidelines ###
+Simply run the `load_datasets.R` script included under the `data-raw` folder.
 
-* Writing tests
-* Code review
-* Other guidelines
+The script will take care of:
 
-### Who do I talk to? ###
+a.  loading the species-specific size-frequency configuration for the most significant species
+b.  *decorating* the **raw** size-frequency data exported by the `iotc.data.reference.datasets.SF.raw` package
+c.  standardizing the size-frequency data for each species group
+d.  producing a distinct `.rda` R data file for each species group, eventually stored under the `data` folder of the project
 
-* Repo owner or admin
-* Other community or team contact
+## How to build the package
+
+From within a R session run:
+
+```         
+devtools::document(roclets = c('rd', 'collate', 'namespace'))
+devtools::build()
+```
+
+or select `Build` / `Build source package` from within R studio
+
+## How to install the package
+
+Build the package first, then from a command shell run:
+
+```         
+Rcmd.exe INSTALL --preclean --no-multiarch --with-keep.source iotc-reference-datasets-sf-std
+```
+
+or select `Build` / `Install package` from within R studio
+
+## Publicly exported package content
+
+### Datasets
+
+1.  `SF.STD.TEMP` - raw size-frequency data for temperate tunas (**albacore** and **southern bluefin tuna**)
+2.  `SF.STD.TROP` - raw size-frequency data for tropical tunas (**bigeye tuna**, **skipjack tuna**, and **yellowfin tuna**)
+3.  `SF.STD.BILL` - raw size-frequency data for billfish species (**black marlin**, **blue marlin**, **striped marlin**, **Indo-pacific sailfish**, and **swordfish**)
+4.  `SF.STD.NERI` - raw size-frequency data for neritic tunas (**bullet tuna**, **frigate tuna**, **kawakawa**, and **longtail tuna**)
+5.  `SF.STD.SEER` - raw size-frequency data for seerfish species (**Indo-pacific king mackerel** and **narrow-barred Spanish mackerel**)
+6.  `SF.STD.SHRK` - raw size-frequency data for **sharks**, **rays**, and **mobulid** species
+7.  `LAST_UPDATE` - the date of last update / production of the datasets
+
+No standardized size-frequency dataset is produced for tunas (NEI), ETP, and all "*other*" species due to the lack of conversion equations.
+
+### Functions
+
+1.  `SF.STD.all()` - to return a collation of all `SF.STD.*` datasets above
+
+## Structure of the datasets
+
+-   `YEAR` \< *to be described* \>
+-   `QUARTER` \< *to be described* \>
+-   `MONTH_START` \< *to be described* \>
+-   `MONTH_END` \< *to be described* \>
+-   `FISHING_GROUND_CODE` \< *to be described* \>
+-   `FISHING_GROUND` \< *to be described* \>
+-   `FLEET_CODE` \< *to be described* \>
+-   `FLEET` \< *to be described* \>
+-   `FISHERY_TYPE_CODE` \< *to be described* \>
+-   `FISHERY_TYPE` \< *to be described* \>
+-   `FISHERY_GROUP_CODE` \< *to be described* \>
+-   `FISHERY_GROUP` \< *to be described* \>
+-   `FISHERY_CODE` \< *to be described* \>
+-   `FISHERY` \< *to be described* \>
+-   `GEAR_CODE` \< *to be described* \>
+-   `GEAR` \< *to be described* \>
+-   `SCHOOL_TYPE_CODE` \< *to be described* \>
+-   `IUCN_STATUS_CODE` \< *to be described* \>
+-   `IUCN_STATUS` \< *to be described* \>
+-   `SPECIES_WP_CODE` \< *to be described* \>
+-   `SPECIES_WP` \< *to be described* \>
+-   `SPECIES_GROUP_CODE` \< *to be described* \>
+-   `SPECIES_GROUP` \< *to be described* \>
+-   `SPECIES_CATEGORY_CODE` \< *to be described* \>
+-   `SPECIES_CATEGORY` \< *to be described* \>
+-   `SPECIES_CODE` \< *to be described* \>
+-   `SPECIES` \< *to be described* \>
+-   `SPECIES_SCIENTIFIC` \< *to be described* \>
+-   `SPECIES_FAMILY` \< *to be described* \>
+-   `SPECIES_ORDER` \< *to be described* \>
+-   `IS_IOTC_SPECIES` \< *to be described* \>
+-   `IS_SPECIES_AGGREGATE` \< *to be described* \>
+-   `IS_SSI` \< *to be described* \>
+-   `MEASURE_TYPE_CODE` \< *to be described* \>
+-   `MEASURE_TYPE` \< *to be described* \>
+-   `MEASURE_UNIT_CODE` \< *to be described* \>
+-   `WEIGHT` \< *to be described* \>
+-   `SEX_CODE` \< *to be described* \>
+-   `CLASS_LOW` \< *to be described* \>
+-   `CLASS_HIGH` \< *to be described* \>
+-   `FISH_COUNT` \< *to be described* \>
+-   `RAISING` \< *to be described* \>
+-   `RAISE_CODE` \< *to be described* \>
