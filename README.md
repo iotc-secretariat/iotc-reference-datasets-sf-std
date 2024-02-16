@@ -14,10 +14,11 @@ Simply run the `load_datasets.R` script included under the `data-raw` folder.
 
 The script will take care of:
 
-a.  loading the species-specific size-frequency configuration for the most significant species
-b.  *decorating* the **raw** size-frequency data exported by the `iotc.data.reference.datasets.SF.raw` package
-c.  standardizing the size-frequency data for each species group
-d.  producing a distinct `.rda` R data file for each species group, eventually stored under the `data` folder of the project
+- loading the species-specific size-frequency configuration for the most significant species
+- *decorating* the **raw** size-frequency data exported by the `iotc.data.reference.datasets.SF.raw` package
+- standardizing the size-frequency data for each species group
+- producing a distinct `.rda` R data file for each species group, eventually stored under the `data` folder of the project
+- uploading the `.rda` files onto the [_Downloads_ section](https://bitbucket.org/iotc-ws/iotc-reference-datasets-sf-std/downloads/) of the BitBucket repository
 
 ## How to build the package
 
@@ -29,6 +30,14 @@ devtools::build()
 ```
 
 or select `Build` / `Build source package` from within R studio
+
+At the end of the installation, the script uploads the artifacts (i.e., the R data files) onto the [Download](https://bitbucket.org/iotc-ws/iotc-reference-datasets-sf-std/downloads/) section of the BitBucket repository.
+
+For this to work, it is necessary to configure in advance the `BITBUCKET_UPLOAD_SF_STD_DATASET_TOKEN` as an environment variable that should be assigned an access token created for the specific repository (with the `repository:write` OAuth 2.0 scope).
+
+The creation of the token is generally [performed by the repository administrators](https://support.atlassian.com/bitbucket-cloud/docs/create-a-repository-access-token/) and the tokens, once created, shall be stored securely as they won't be accessible again after the creation.
+
+See also the specific section of the [BitBucket cloud REST API](https://developer.atlassian.com/cloud/bitbucket/rest/api-group-downloads/#api-repositories-workspace-repo-slug-downloads-post).
 
 ## How to install the package
 
@@ -44,25 +53,25 @@ or select `Build` / `Install package` from within R studio
 
 ### Datasets
 
-1.  `SF.STD.TEMP` - raw size-frequency data for temperate tunas (**albacore** and **southern bluefin tuna**)
-2.  `SF.STD.TROP` - raw size-frequency data for tropical tunas (**bigeye tuna**, **skipjack tuna**, and **yellowfin tuna**)
-3.  `SF.STD.BILL` - raw size-frequency data for billfish species (**black marlin**, **blue marlin**, **striped marlin**, **Indo-pacific sailfish**, and **swordfish**)
-4.  `SF.STD.NERI` - raw size-frequency data for neritic tunas (**bullet tuna**, **frigate tuna**, **kawakawa**, and **longtail tuna**)
-5.  `SF.STD.SEER` - raw size-frequency data for seerfish species (**Indo-pacific king mackerel** and **narrow-barred Spanish mackerel**)
-6.  `SF.STD.SHRK` - raw size-frequency data for **sharks**, **rays**, and **mobulid** species
+1.  `STD.TEMP` - raw size-frequency data for temperate tunas (**albacore** and **southern bluefin tuna**)
+2.  `STD.TROP` - raw size-frequency data for tropical tunas (**bigeye tuna**, **skipjack tuna**, and **yellowfin tuna**)
+3.  `STD.BILL` - raw size-frequency data for billfish species (**black marlin**, **blue marlin**, **striped marlin**, **Indo-pacific sailfish**, and **swordfish**)
+4.  `STD.NERI` - raw size-frequency data for neritic tunas (**bullet tuna**, **frigate tuna**, **kawakawa**, and **longtail tuna**)
+5.  `STD.SEER` - raw size-frequency data for seerfish species (**Indo-pacific king mackerel** and **narrow-barred Spanish mackerel**)
+6.  `STD.SHRK` - raw size-frequency data for **sharks**, **rays**, and **mobulid** species
 7.  `LAST_UPDATE` - the date of last update / production of the datasets
 
 Standardized size-frequency datasets **ARE NOT** produced for:
 
-- tunas (NEI), 
-- ETP species, and 
-- all "*other*" species 
+-   tunas (NEI),
+-   ETP species, and
+-   all "*other*" species
 
 due to the lack of proper conversion equations.
 
 ### Functions
 
-1.  `SF.STD.all()` - to return a collation of all `SF.STD.*` datasets above
+1.  `STD.all()` - to return a collation of all `STD.*` datasets above
 
 ## Structure of the datasets
 
@@ -110,9 +119,9 @@ due to the lack of proper conversion equations.
 -   `RAISING` \< *to be described* \>
 -   `RAISE_CODE` \< *to be described* \>
 
-The `MEASURE_UNIT_CODE` column is _synthetic_, i.e., added _a posteriori_ and fixed to `cm`, as the `MEASURE_TYPE_CODE` in the standardized size-frequency datasets is always a length.
+The `MEASURE_UNIT_CODE` column is *synthetic*, i.e., added *a posteriori* and fixed to `cm`, as the `MEASURE_TYPE_CODE` in the standardized size-frequency datasets is always a length.
 
 Note also how there is no `WEIGHT_UNIT_CODE` column, as the estimated `WEIGHT` is:
 
-- Assumed to be _round weight_
-- Assumed to be in kilograms by default
+-   Assumed to be *round weight*
+-   Assumed to be in kilograms by default

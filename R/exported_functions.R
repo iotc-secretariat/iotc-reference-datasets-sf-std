@@ -1,19 +1,19 @@
 #' Returns a dataset containing standardized size-frequency data for all categories of species
 #' @export
-SF.STD.all = function() {
+STD.all = function() {
   ALL =
     rbind(
-      SF.STD.TEMP,
-      SF.STD.TROP,
-      SF.STD.BILL,
-      SF.STD.NERI,
-      SF.STD.SEER,
-      SF.STD.SHRK
+      STD.TEMP,
+      STD.TROP,
+      STD.BILL,
+      STD.NERI,
+      STD.SEER,
+      STD.SHRK
     )
 
-  if(exists("SF.STD.TNEI") & !is.null(SF.STD.TNEI)) ALL = rbind(ALL, SF.STD.TNEI)
-  if(exists("SF.STD.ETPS") & !is.null(SF.STD.ETPS)) ALL = rbind(ALL, SF.STD.ETPS)
-  if(exists("SF.STD.OTHR") & !is.null(SF.STD.OTHR)) ALL = rbind(ALL, SF.STD.OTHR)
+  if(exists("STD.TNEI") & !is.null(STD.TNEI)) ALL = rbind(ALL, STD.TNEI)
+  if(exists("STD.ETPS") & !is.null(STD.ETPS)) ALL = rbind(ALL, STD.ETPS)
+  if(exists("STD.OTHR") & !is.null(STD.OTHR)) ALL = rbind(ALL, STD.OTHR)
 
   return(ALL)
 }

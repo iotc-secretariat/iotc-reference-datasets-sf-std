@@ -49,7 +49,7 @@
 #'   \item{RAISING}{}
 #'   \item{RAISE_CODE}{}
 #' }
-"SF.STD.TEMP"
+"STD.TEMP"
 
 #' The 'standardized' monthly size-frequency dataset for tropical tunas
 #'
@@ -99,7 +99,7 @@
 #'   \item{RAISING}{}
 #'   \item{RAISE_CODE}{}
 #' }
-"SF.STD.TROP"
+"STD.TROP"
 
 #' The 'standardized' monthly size-frequency dataset for billfish
 #'
@@ -149,7 +149,7 @@
 #'   \item{RAISING}{}
 #'   \item{RAISE_CODE}{}
 #' }
-"SF.STD.BILL"
+"STD.BILL"
 
 #' The 'standardized' monthly size-frequency dataset for neritic tunas
 #'
@@ -199,7 +199,7 @@
 #'   \item{RAISING}{}
 #'   \item{RAISE_CODE}{}
 #' }
-"SF.STD.NERI"
+"STD.NERI"
 
 #' The 'standardized' monthly size-frequency dataset for seerfish
 #'
@@ -249,7 +249,7 @@
 #'   \item{RAISING}{}
 #'   \item{RAISE_CODE}{}
 #' }
-"SF.STD.SEER"
+"STD.SEER"
 
 #' The 'standardized' monthly size-frequency dataset for tunas NEI
 #'
@@ -299,7 +299,7 @@
 #'   \item{RAISING}{}
 #'   \item{RAISE_CODE}{}
 #' }
-#"SF.STD.TNEI"
+#"STD.TNEI"
 
 #' The 'standardized' monthly size-frequency dataset for sharks and rays
 #'
@@ -349,7 +349,7 @@
 #'   \item{RAISING}{}
 #'   \item{RAISE_CODE}{}
 #' }
-"SF.STD.SHRK"
+"STD.SHRK"
 
 #' The 'standardized' monthly size-frequency dataset for all other species
 #'
@@ -399,7 +399,7 @@
 #'   \item{RAISING}{}
 #'   \item{RAISE_CODE}{}
 #' }
-#"SF.STD.OTHR"
+#"STD.OTHR"
 
 #' The 'standardized' monthly size-frequency dataset for ETP species
 #'
@@ -448,5 +448,5 @@
 #'   \item{RAISING}{}
 #'   \item{RAISE_CODE}{}
 #' }
-#"SF.STD.ETPS"
+#"STD.ETPS"
 

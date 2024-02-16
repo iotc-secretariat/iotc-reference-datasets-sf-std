@@ -1,6 +1,7 @@
 library(iotc.base.common.data)
 library(iotc.base.common.std)
 library(iotc.data.reference.datasets.SF.raw)
+library(httr)
 library(lubridate)
 
 LAST_UPDATE = today(tzone = "UTC")
@@ -70,20 +71,37 @@ standardize = function(sf_data) {
   return(STANDARDIZED_SF)
 }
 
-SF.STD.TEMP = standardize(iotc.data.reference.datasets.SF.raw::SF.RAW.TEMP)
-usethis::use_data(SF.STD.TEMP, overwrite = TRUE, compress = "gzip")
+STD.TEMP = standardize(iotc.data.reference.datasets.SF.raw::RAW.TEMP)
+usethis::use_data(STD.TEMP, overwrite = TRUE, compress = "gzip")
 
-SF.STD.TROP = standardize(iotc.data.reference.datasets.SF.raw::SF.RAW.TROP)
-usethis::use_data(SF.STD.TROP, overwrite = TRUE, compress = "gzip")
+STD.TROP = standardize(iotc.data.reference.datasets.SF.raw::RAW.TROP)
+usethis::use_data(STD.TROP, overwrite = TRUE, compress = "gzip")
 
-SF.STD.BILL = standardize(iotc.data.reference.datasets.SF.raw::SF.RAW.BILL)
-usethis::use_data(SF.STD.BILL, overwrite = TRUE, compress = "gzip")
+STD.BILL = standardize(iotc.data.reference.datasets.SF.raw::RAW.BILL)
+usethis::use_data(STD.BILL, overwrite = TRUE, compress = "gzip")
 
-SF.STD.NERI = standardize(iotc.data.reference.datasets.SF.raw::SF.RAW.NERI)
-usethis::use_data(SF.STD.NERI, overwrite = TRUE, compress = "gzip")
+STD.NERI = standardize(iotc.data.reference.datasets.SF.raw::RAW.NERI)
+usethis::use_data(STD.NERI, overwrite = TRUE, compress = "gzip")
 
-SF.STD.SEER = standardize(iotc.data.reference.datasets.SF.raw::SF.RAW.SEER)
-usethis::use_data(SF.STD.SEER, overwrite = TRUE, compress = "gzip")
+STD.SEER = standardize(iotc.data.reference.datasets.SF.raw::RAW.SEER)
+usethis::use_data(STD.SEER, overwrite = TRUE, compress = "gzip")
 
-SF.STD.SHRK = standardize(iotc.data.reference.datasets.SF.raw::SF.RAW.SHRK)
-usethis::use_data(SF.STD.SHRK, overwrite = TRUE, compress = "gzip")
+STD.SHRK = standardize(iotc.data.reference.datasets.SF.raw::RAW.SHRK)
+usethis::use_data(STD.SHRK, overwrite = TRUE, compress = "gzip")
+
+BITBUCKET_REPO_URL = paste0("https://api.bitbucket.org/2.0/repositories/iotc-ws/iotc-reference-datasets-SF-std/downloads")
+
+for(file in list.files("../data", pattern = "*.rda")) {
+  log_info(paste0("Uploading '", file, "' to BitBucket repository under ", BITBUCKET_REPO_URL))
+
+  upload_response =
+    POST(BITBUCKET_REPO_URL,
+         body = list(files = upload_file(paste0("../data/", file))),
+         add_headers(
+           Authorization = paste0("Bearer ", Sys.getenv("BITBUCKET_UPLOAD_SF_STD_DATASET_TOKEN"))
+         )
+    )
+
+  log_info(paste0("Upload response: ", upload_response))
+}
+
