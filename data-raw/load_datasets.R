@@ -53,23 +53,37 @@ standardize = function(sf_data) {
     }
   }
 
+  STANDARDIZED_SF = decorate(STANDARDIZED_SF, factorize = FALSE)
+
+  # What follows is required to add the 'MEASURE_UNIT_CODE' column in the right place
+  # and ensure its values are all set to 'cm' (as we are standardizing the lengths of
+  # each individual 'raw' SF record)
+
+  ORDERED_COLUMNS = colnames(STANDARDIZED_SF)[1:35]
+  ORDERED_COLUMNS = append(ORDERED_COLUMNS, "MEASURE_UNIT_CODE")
+  ORDERED_COLUMNS = append(ORDERED_COLUMNS, colnames(STANDARDIZED_SF)[36:42])
+
+  STANDARDIZED_SF$MEASURE_UNIT_CODE = "CM"
+
+  setcolorder(STANDARDIZED_SF, ORDERED_COLUMNS)
+
   return(STANDARDIZED_SF)
 }
 
-SF.STD.TEMP = decorate(standardize(iotc.data.reference.datasets.SF.raw::SF.RAW.TEMP), factorize = FALSE)
+SF.STD.TEMP = standardize(iotc.data.reference.datasets.SF.raw::SF.RAW.TEMP)
 usethis::use_data(SF.STD.TEMP, overwrite = TRUE, compress = "gzip")
 
-SF.STD.TROP = decorate(standardize(iotc.data.reference.datasets.SF.raw::SF.RAW.TROP), factorize = FALSE)
+SF.STD.TROP = standardize(iotc.data.reference.datasets.SF.raw::SF.RAW.TROP)
 usethis::use_data(SF.STD.TROP, overwrite = TRUE, compress = "gzip")
 
-SF.STD.BILL = decorate(standardize(iotc.data.reference.datasets.SF.raw::SF.RAW.BILL), factorize = FALSE)
+SF.STD.BILL = standardize(iotc.data.reference.datasets.SF.raw::SF.RAW.BILL)
 usethis::use_data(SF.STD.BILL, overwrite = TRUE, compress = "gzip")
 
-SF.STD.NERI = decorate(standardize(iotc.data.reference.datasets.SF.raw::SF.RAW.NERI), factorize = FALSE)
+SF.STD.NERI = standardize(iotc.data.reference.datasets.SF.raw::SF.RAW.NERI)
 usethis::use_data(SF.STD.NERI, overwrite = TRUE, compress = "gzip")
 
-SF.STD.SEER = decorate(standardize(iotc.data.reference.datasets.SF.raw::SF.RAW.SEER), factorize = FALSE)
+SF.STD.SEER = standardize(iotc.data.reference.datasets.SF.raw::SF.RAW.SEER)
 usethis::use_data(SF.STD.SEER, overwrite = TRUE, compress = "gzip")
 
-SF.STD.SHRK = decorate(standardize(iotc.data.reference.datasets.SF.raw::SF.RAW.SHRK), factorize = FALSE)
+SF.STD.SHRK = standardize(iotc.data.reference.datasets.SF.raw::SF.RAW.SHRK)
 usethis::use_data(SF.STD.SHRK, overwrite = TRUE, compress = "gzip")

@@ -40,6 +40,7 @@
 #'   \item{IS_SSI}{}
 #'   \item{MEASURE_TYPE_CODE}{}
 #'   \item{MEASURE_TYPE}{}
+#'   \item{MEASURE_UNIT_CODE}{}
 #'   \item{WEIGHT}{}
 #'   \item{SEX_CODE}{}
 #'   \item{CLASS_LOW}{}
@@ -89,6 +90,7 @@
 #'   \item{IS_SSI}{}
 #'   \item{MEASURE_TYPE_CODE}{}
 #'   \item{MEASURE_TYPE}{}
+#'   \item{MEASURE_UNIT_CODE}{}
 #'   \item{WEIGHT}{}
 #'   \item{SEX_CODE}{}
 #'   \item{CLASS_LOW}{}
@@ -138,6 +140,7 @@
 #'   \item{IS_SSI}{}
 #'   \item{MEASURE_TYPE_CODE}{}
 #'   \item{MEASURE_TYPE}{}
+#'   \item{MEASURE_UNIT_CODE}{}
 #'   \item{WEIGHT}{}
 #'   \item{SEX_CODE}{}
 #'   \item{CLASS_LOW}{}
@@ -187,6 +190,7 @@
 #'   \item{IS_SSI}{}
 #'   \item{MEASURE_TYPE_CODE}{}
 #'   \item{MEASURE_TYPE}{}
+#'   \item{MEASURE_UNIT_CODE}{}
 #'   \item{WEIGHT}{}
 #'   \item{SEX_CODE}{}
 #'   \item{CLASS_LOW}{}
@@ -236,6 +240,7 @@
 #'   \item{IS_SSI}{}
 #'   \item{MEASURE_TYPE_CODE}{}
 #'   \item{MEASURE_TYPE}{}
+#'   \item{MEASURE_UNIT_CODE}{}
 #'   \item{WEIGHT}{}
 #'   \item{SEX_CODE}{}
 #'   \item{CLASS_LOW}{}
@@ -285,6 +290,7 @@
 #'   \item{IS_SSI}{}
 #'   \item{MEASURE_TYPE_CODE}{}
 #'   \item{MEASURE_TYPE}{}
+#'   \item{MEASURE_UNIT_CODE}{}
 #'   \item{WEIGHT}{}
 #'   \item{SEX_CODE}{}
 #'   \item{CLASS_LOW}{}
@@ -334,6 +340,7 @@
 #'   \item{IS_SSI}{}
 #'   \item{MEASURE_TYPE_CODE}{}
 #'   \item{MEASURE_TYPE}{}
+#'   \item{MEASURE_UNIT_CODE}{}
 #'   \item{WEIGHT}{}
 #'   \item{SEX_CODE}{}
 #'   \item{CLASS_LOW}{}
@@ -383,6 +390,7 @@
 #'   \item{IS_SSI}{}
 #'   \item{MEASURE_TYPE_CODE}{}
 #'   \item{MEASURE_TYPE}{}
+#'   \item{MEASURE_UNIT_CODE}{}
 #'   \item{WEIGHT}{}
 #'   \item{SEX_CODE}{}
 #'   \item{CLASS_LOW}{}
