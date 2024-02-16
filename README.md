@@ -52,7 +52,13 @@ or select `Build` / `Install package` from within R studio
 6.  `SF.STD.SHRK` - raw size-frequency data for **sharks**, **rays**, and **mobulid** species
 7.  `LAST_UPDATE` - the date of last update / production of the datasets
 
-No standardized size-frequency dataset is produced for tunas (NEI), ETP, and all "*other*" species due to the lack of conversion equations.
+Standardized size-frequency datasets **ARE NOT** produced for:
+
+- tunas (NEI), 
+- ETP species, and 
+- all "*other*" species 
+
+due to the lack of proper conversion equations.
 
 ### Functions
 
@@ -103,3 +109,10 @@ No standardized size-frequency dataset is produced for tunas (NEI), ETP, and all
 -   `FISH_COUNT` \< *to be described* \>
 -   `RAISING` \< *to be described* \>
 -   `RAISE_CODE` \< *to be described* \>
+
+The `MEASURE_UNIT_CODE` column is _synthetic_, i.e., added _a posteriori_ and fixed to `cm`, as the `MEASURE_TYPE_CODE` in the standardized size-frequency datasets is always a length.
+
+Note also how there is no `WEIGHT_UNIT_CODE` column, as the estimated `WEIGHT` is:
+
+- Assumed to be _round weight_
+- Assumed to be in kilograms by default
