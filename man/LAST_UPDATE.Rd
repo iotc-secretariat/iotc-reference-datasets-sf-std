@@ -3,11 +3,7 @@
 \docType{data}
 \name{LAST_UPDATE}
 \alias{LAST_UPDATE}
-<<<<<<< HEAD
 \title{The date at which the 'standardized' size-frequency dataset was last updated}
-=======
-\title{The date at which the 'raw' size-frequency dataset was last updated}
->>>>>>> cd40cfe0034d183c205a4747f7b6dfb8086fe5ca
 \format{
 An object of class \code{Date} of length 1.
 }
@@ -15,10 +11,6 @@ An object of class \code{Date} of length 1.
 LAST_UPDATE
 }
 \description{
-<<<<<<< HEAD
 The date at which the 'standardized' size-frequency dataset was last updated
-=======
-The date at which the 'raw' size-frequency dataset was last updated
->>>>>>> cd40cfe0034d183c205a4747f7b6dfb8086fe5ca
 }
 \keyword{datasets}
