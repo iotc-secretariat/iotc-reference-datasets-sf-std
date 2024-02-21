@@ -69,6 +69,15 @@ standardize = function(sf_data) {
 STD.TROP = standardize(iotc.data.reference.datasets.SF.raw::RAW.TROP)
 usethis::use_data(STD.TROP, overwrite = TRUE, compress = "gzip")
 
+STD.TROP.BET = standardize(iotc.data.reference.datasets.SF.raw::RAW.TROP[SPECIES_CODE == "BET"])
+usethis::use_data(STD.TROP.BET, overwrite = TRUE, compress = "gzip")
+
+STD.TROP.SKJ = standardize(iotc.data.reference.datasets.SF.raw::RAW.TROP[SPECIES_CODE == "SKJ"])
+usethis::use_data(STD.TROP.SKJ, overwrite = TRUE, compress = "gzip")
+
+STD.TROP.YFT = standardize(iotc.data.reference.datasets.SF.raw::RAW.TROP[SPECIES_CODE == "YFT"])
+usethis::use_data(STD.TROP.YFT, overwrite = TRUE, compress = "gzip")
+
 STD.TEMP = standardize(iotc.data.reference.datasets.SF.raw::RAW.TEMP)
 usethis::use_data(STD.TEMP, overwrite = TRUE, compress = "gzip")
 

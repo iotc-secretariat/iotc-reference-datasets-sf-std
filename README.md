@@ -14,10 +14,10 @@ Simply run the `load_datasets.R` script included under the `data-raw` folder.
 
 The script will take care of:
 
-- loading the species-specific size-frequency configuration for the most significant species
-- *decorating* the **raw** size-frequency data exported by the `iotc.data.reference.datasets.SF.raw` package
-- standardizing the size-frequency data for each species group
-- producing a distinct `.rda` R data file for each species group, eventually stored under the `data` folder of the project
+-   loading the species-specific size-frequency configuration for the most significant species
+-   *decorating* the **raw** size-frequency data exported by the `iotc.data.reference.datasets.SF.raw` package
+-   standardizing the size-frequency data for each species group
+-   producing a distinct `.rda` R data file for each species group, eventually stored under the `data` folder of the project
 
 ## How to build the package
 
@@ -49,13 +49,17 @@ or select `Build` / `Install package` from within R studio
 
 ### Datasets
 
-1.  `STD.TEMP` - raw size-frequency data for temperate tunas (**albacore** and **southern bluefin tuna**)
-2.  `STD.TROP` - raw size-frequency data for tropical tunas (**bigeye tuna**, **skipjack tuna**, and **yellowfin tuna**)
-3.  `STD.BILL` - raw size-frequency data for billfish species (**black marlin**, **blue marlin**, **striped marlin**, **Indo-pacific sailfish**, and **swordfish**)
-4.  `STD.NERI` - raw size-frequency data for neritic tunas (**bullet tuna**, **frigate tuna**, **kawakawa**, and **longtail tuna**)
-5.  `STD.SEER` - raw size-frequency data for seerfish species (**Indo-pacific king mackerel** and **narrow-barred Spanish mackerel**)
-6.  `STD.SHRK` - raw size-frequency data for **sharks**, **rays**, and **mobulid** species
-7.  `LAST_UPDATE` - the date of last update / production of the datasets
+1.  `STD.TROP` - standardized size-frequency data for tropical tunas (**bigeye tuna**, **skipjack tuna**, and **yellowfin tuna**), and also
+
+-   1.a. `STD.TROP.BET` - standardized size-frequency data for bigeye tuna only (same data as in `STD.TROP`)
+-   1.b. `STD.TROP.SKJ` - standardized size-frequency data for skipjack tuna only (same data as in `STD.TROP`)
+-   1.c. `STD.TROP.YFT` - standardized size-frequency data for yellowfin tuna only (same data as in `STD.TROP`)
+
+2.  `STD.TEMP` - standardized size-frequency data for temperate tunas (**albacore** and **southern bluefin tuna**)
+3.  `STD.BILL` - standardized size-frequency data for billfish species (**black marlin**, **blue marlin**, **striped marlin**, **Indo-pacific sailfish**, and **swordfish**)
+4.  `STD.NERI` - standardized size-frequency data for neritic tunas (**bullet tuna**, **frigate tuna**, **kawakawa**, and **longtail tuna**)
+5.  `STD.SEER` - standardized size-frequency data for seerfish species (**Indo-pacific king mackerel** and **narrow-barred Spanish mackerel**)
+6.  `STD.SHRK` - standardized size-frequency data for **sharks**, **rays**, and **mobulid** species
 
 Standardized size-frequency datasets **ARE NOT** produced for:
 
@@ -71,49 +75,49 @@ due to the lack of proper conversion equations.
 
 ## Structure of the datasets
 
--   `YEAR` < *to be described* >
--   `QUARTER` < *to be described* >
--   `MONTH_START` < *to be described* >
--   `MONTH_END` < *to be described* >
--   `FISHING_GROUND_CODE` < *to be described* >
--   `FISHING_GROUND` < *to be described* >
--   `FLEET_CODE` < *to be described* >
--   `FLEET` < *to be described* >
--   `FISHERY_TYPE_CODE` < *to be described* >
--   `FISHERY_TYPE` < *to be described* >
--   `FISHERY_GROUP_CODE` < *to be described* >
--   `FISHERY_GROUP` < *to be described* >
--   `FISHERY_CODE` < *to be described* >
--   `FISHERY` < *to be described* >
--   `GEAR_CODE` < *to be described* >
--   `GEAR` < *to be described* >
--   `SCHOOL_TYPE_CODE` < *to be described* >
--   `IUCN_STATUS_CODE` < *to be described* >
--   `IUCN_STATUS` < *to be described* >
--   `SPECIES_WP_CODE` < *to be described* >
--   `SPECIES_WP` < *to be described* >
--   `SPECIES_GROUP_CODE` < *to be described* >
--   `SPECIES_GROUP` < *to be described* >
--   `SPECIES_CATEGORY_CODE` < *to be described* >
--   `SPECIES_CATEGORY` < *to be described* >
--   `SPECIES_CODE` < *to be described* >
--   `SPECIES` < *to be described* >
--   `SPECIES_SCIENTIFIC` < *to be described* >
--   `SPECIES_FAMILY` < *to be described* >
--   `SPECIES_ORDER` < *to be described* >
--   `IS_IOTC_SPECIES` < *to be described* >
--   `IS_SPECIES_AGGREGATE` < *to be described* >
--   `IS_SSI` < *to be described* >
--   `MEASURE_TYPE_CODE` < *to be described* >
--   `MEASURE_TYPE` < *to be described* >
--   `MEASURE_UNIT_CODE` < *to be described* >
--   `WEIGHT` < *to be described* >
--   `SEX_CODE` < *to be described* >
--   `CLASS_LOW` < *to be described* >
--   `CLASS_HIGH` < *to be described* >
--   `FISH_COUNT` < *to be described* >
--   `RAISING` < *to be described* >
--   `RAISE_CODE` < *to be described* >
+-   `YEAR` \< *to be described* \>
+-   `QUARTER` \< *to be described* \>
+-   `MONTH_START` \< *to be described* \>
+-   `MONTH_END` \< *to be described* \>
+-   `FISHING_GROUND_CODE` \< *to be described* \>
+-   `FISHING_GROUND` \< *to be described* \>
+-   `FLEET_CODE` \< *to be described* \>
+-   `FLEET` \< *to be described* \>
+-   `FISHERY_TYPE_CODE` \< *to be described* \>
+-   `FISHERY_TYPE` \< *to be described* \>
+-   `FISHERY_GROUP_CODE` \< *to be described* \>
+-   `FISHERY_GROUP` \< *to be described* \>
+-   `FISHERY_CODE` \< *to be described* \>
+-   `FISHERY` \< *to be described* \>
+-   `GEAR_CODE` \< *to be described* \>
+-   `GEAR` \< *to be described* \>
+-   `SCHOOL_TYPE_CODE` \< *to be described* \>
+-   `IUCN_STATUS_CODE` \< *to be described* \>
+-   `IUCN_STATUS` \< *to be described* \>
+-   `SPECIES_WP_CODE` \< *to be described* \>
+-   `SPECIES_WP` \< *to be described* \>
+-   `SPECIES_GROUP_CODE` \< *to be described* \>
+-   `SPECIES_GROUP` \< *to be described* \>
+-   `SPECIES_CATEGORY_CODE` \< *to be described* \>
+-   `SPECIES_CATEGORY` \< *to be described* \>
+-   `SPECIES_CODE` \< *to be described* \>
+-   `SPECIES` \< *to be described* \>
+-   `SPECIES_SCIENTIFIC` \< *to be described* \>
+-   `SPECIES_FAMILY` \< *to be described* \>
+-   `SPECIES_ORDER` \< *to be described* \>
+-   `IS_IOTC_SPECIES` \< *to be described* \>
+-   `IS_SPECIES_AGGREGATE` \< *to be described* \>
+-   `IS_SSI` \< *to be described* \>
+-   `MEASURE_TYPE_CODE` \< *to be described* \>
+-   `MEASURE_TYPE` \< *to be described* \>
+-   `MEASURE_UNIT_CODE` \< *to be described* \>
+-   `WEIGHT` \< *to be described* \>
+-   `SEX_CODE` \< *to be described* \>
+-   `CLASS_LOW` \< *to be described* \>
+-   `CLASS_HIGH` \< *to be described* \>
+-   `FISH_COUNT` \< *to be described* \>
+-   `RAISING` \< *to be described* \>
+-   `RAISE_CODE` \< *to be described* \>
 
 The `MEASURE_UNIT_CODE` column is *synthetic*, i.e., added *a posteriori* and fixed to `cm`, as the `MEASURE_TYPE_CODE` in the standardized size-frequency datasets is always a length.
 

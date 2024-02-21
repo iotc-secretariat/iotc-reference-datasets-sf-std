@@ -2,56 +2,6 @@
 #' These include the number of rows for each dataset and their date of last update
 "METADATA"
 
-#' The 'standardized' monthly size-frequency dataset for temperate tunas
-#'
-#' @format
-#' \describe{
-#'   \item{YEAR}{}
-#'   \item{QUARTER}{}
-#'   \item{MONTH_START}{}
-#'   \item{MONTH_END}{}
-#'   \item{FISHING_GROUND_CODE}{}
-#'   \item{FISHING_GROUND}{}
-#'   \item{FLEET_CODE}{}
-#'   \item{FLEET}{}
-#'   \item{FISHERY_TYPE_CODE}{}
-#'   \item{FISHERY_TYPE}{}
-#'   \item{FISHERY_GROUP_CODE}{}
-#'   \item{FISHERY_GROUP}{}
-#'   \item{FISHERY_CODE}{}
-#'   \item{FISHERY}{}
-#'   \item{GEAR_CODE}{}
-#'   \item{GEAR}{}
-#'   \item{SCHOOL_TYPE_CODE}{}
-#'   \item{IUCN_STATUS_CODE}{}
-#'   \item{IUCN_STATUS}{}
-#'   \item{SPECIES_WP_CODE}{}
-#'   \item{SPECIES_WP}{}
-#'   \item{SPECIES_GROUP_CODE}{}
-#'   \item{SPECIES_GROUP}{}
-#'   \item{SPECIES_CATEGORY_CODE}{}
-#'   \item{SPECIES_CATEGORY}{}
-#'   \item{SPECIES_CODE}{}
-#'   \item{SPECIES}{}
-#'   \item{SPECIES_SCIENTIFIC}{}
-#'   \item{SPECIES_FAMILY}{}
-#'   \item{SPECIES_ORDER}{}
-#'   \item{IS_IOTC_SPECIES}{}
-#'   \item{IS_SPECIES_AGGREGATE}{}
-#'   \item{IS_SSI}{}
-#'   \item{MEASURE_TYPE_CODE}{}
-#'   \item{MEASURE_TYPE}{}
-#'   \item{MEASURE_UNIT_CODE}{}
-#'   \item{WEIGHT}{}
-#'   \item{SEX_CODE}{}
-#'   \item{CLASS_LOW}{}
-#'   \item{CLASS_HIGH}{}
-#'   \item{FISH_COUNT}{}
-#'   \item{RAISING}{}
-#'   \item{RAISE_CODE}{}
-#' }
-"STD.TEMP"
-
 #' The 'standardized' monthly size-frequency dataset for tropical tunas
 #'
 #' @format
@@ -101,6 +51,206 @@
 #'   \item{RAISE_CODE}{}
 #' }
 "STD.TROP"
+
+#' The 'standardized' monthly size-frequency dataset for bigeye tuna
+#'
+#' @format
+#' \describe{
+#'   \item{YEAR}{}
+#'   \item{QUARTER}{}
+#'   \item{MONTH_START}{}
+#'   \item{MONTH_END}{}
+#'   \item{FISHING_GROUND_CODE}{}
+#'   \item{FISHING_GROUND}{}
+#'   \item{FLEET_CODE}{}
+#'   \item{FLEET}{}
+#'   \item{FISHERY_TYPE_CODE}{}
+#'   \item{FISHERY_TYPE}{}
+#'   \item{FISHERY_GROUP_CODE}{}
+#'   \item{FISHERY_GROUP}{}
+#'   \item{FISHERY_CODE}{}
+#'   \item{FISHERY}{}
+#'   \item{GEAR_CODE}{}
+#'   \item{GEAR}{}
+#'   \item{SCHOOL_TYPE_CODE}{}
+#'   \item{IUCN_STATUS_CODE}{}
+#'   \item{IUCN_STATUS}{}
+#'   \item{SPECIES_WP_CODE}{}
+#'   \item{SPECIES_WP}{}
+#'   \item{SPECIES_GROUP_CODE}{}
+#'   \item{SPECIES_GROUP}{}
+#'   \item{SPECIES_CATEGORY_CODE}{}
+#'   \item{SPECIES_CATEGORY}{}
+#'   \item{SPECIES_CODE}{}
+#'   \item{SPECIES}{}
+#'   \item{SPECIES_SCIENTIFIC}{}
+#'   \item{SPECIES_FAMILY}{}
+#'   \item{SPECIES_ORDER}{}
+#'   \item{IS_IOTC_SPECIES}{}
+#'   \item{IS_SPECIES_AGGREGATE}{}
+#'   \item{IS_SSI}{}
+#'   \item{MEASURE_TYPE_CODE}{}
+#'   \item{MEASURE_TYPE}{}
+#'   \item{MEASURE_UNIT_CODE}{}
+#'   \item{WEIGHT}{}
+#'   \item{SEX_CODE}{}
+#'   \item{CLASS_LOW}{}
+#'   \item{CLASS_HIGH}{}
+#'   \item{FISH_COUNT}{}
+#'   \item{RAISING}{}
+#'   \item{RAISE_CODE}{}
+#' }
+"STD.TROP.BET"
+
+#' The 'standardized' monthly size-frequency dataset for skipjack tuna
+#'
+#' @format
+#' \describe{
+#'   \item{YEAR}{}
+#'   \item{QUARTER}{}
+#'   \item{MONTH_START}{}
+#'   \item{MONTH_END}{}
+#'   \item{FISHING_GROUND_CODE}{}
+#'   \item{FISHING_GROUND}{}
+#'   \item{FLEET_CODE}{}
+#'   \item{FLEET}{}
+#'   \item{FISHERY_TYPE_CODE}{}
+#'   \item{FISHERY_TYPE}{}
+#'   \item{FISHERY_GROUP_CODE}{}
+#'   \item{FISHERY_GROUP}{}
+#'   \item{FISHERY_CODE}{}
+#'   \item{FISHERY}{}
+#'   \item{GEAR_CODE}{}
+#'   \item{GEAR}{}
+#'   \item{SCHOOL_TYPE_CODE}{}
+#'   \item{IUCN_STATUS_CODE}{}
+#'   \item{IUCN_STATUS}{}
+#'   \item{SPECIES_WP_CODE}{}
+#'   \item{SPECIES_WP}{}
+#'   \item{SPECIES_GROUP_CODE}{}
+#'   \item{SPECIES_GROUP}{}
+#'   \item{SPECIES_CATEGORY_CODE}{}
+#'   \item{SPECIES_CATEGORY}{}
+#'   \item{SPECIES_CODE}{}
+#'   \item{SPECIES}{}
+#'   \item{SPECIES_SCIENTIFIC}{}
+#'   \item{SPECIES_FAMILY}{}
+#'   \item{SPECIES_ORDER}{}
+#'   \item{IS_IOTC_SPECIES}{}
+#'   \item{IS_SPECIES_AGGREGATE}{}
+#'   \item{IS_SSI}{}
+#'   \item{MEASURE_TYPE_CODE}{}
+#'   \item{MEASURE_TYPE}{}
+#'   \item{MEASURE_UNIT_CODE}{}
+#'   \item{WEIGHT}{}
+#'   \item{SEX_CODE}{}
+#'   \item{CLASS_LOW}{}
+#'   \item{CLASS_HIGH}{}
+#'   \item{FISH_COUNT}{}
+#'   \item{RAISING}{}
+#'   \item{RAISE_CODE}{}
+#' }
+"STD.TROP.SKJ"
+
+#' The 'standardized' monthly size-frequency dataset for yellowfin tuna
+#'
+#' @format
+#' \describe{
+#'   \item{YEAR}{}
+#'   \item{QUARTER}{}
+#'   \item{MONTH_START}{}
+#'   \item{MONTH_END}{}
+#'   \item{FISHING_GROUND_CODE}{}
+#'   \item{FISHING_GROUND}{}
+#'   \item{FLEET_CODE}{}
+#'   \item{FLEET}{}
+#'   \item{FISHERY_TYPE_CODE}{}
+#'   \item{FISHERY_TYPE}{}
+#'   \item{FISHERY_GROUP_CODE}{}
+#'   \item{FISHERY_GROUP}{}
+#'   \item{FISHERY_CODE}{}
+#'   \item{FISHERY}{}
+#'   \item{GEAR_CODE}{}
+#'   \item{GEAR}{}
+#'   \item{SCHOOL_TYPE_CODE}{}
+#'   \item{IUCN_STATUS_CODE}{}
+#'   \item{IUCN_STATUS}{}
+#'   \item{SPECIES_WP_CODE}{}
+#'   \item{SPECIES_WP}{}
+#'   \item{SPECIES_GROUP_CODE}{}
+#'   \item{SPECIES_GROUP}{}
+#'   \item{SPECIES_CATEGORY_CODE}{}
+#'   \item{SPECIES_CATEGORY}{}
+#'   \item{SPECIES_CODE}{}
+#'   \item{SPECIES}{}
+#'   \item{SPECIES_SCIENTIFIC}{}
+#'   \item{SPECIES_FAMILY}{}
+#'   \item{SPECIES_ORDER}{}
+#'   \item{IS_IOTC_SPECIES}{}
+#'   \item{IS_SPECIES_AGGREGATE}{}
+#'   \item{IS_SSI}{}
+#'   \item{MEASURE_TYPE_CODE}{}
+#'   \item{MEASURE_TYPE}{}
+#'   \item{MEASURE_UNIT_CODE}{}
+#'   \item{WEIGHT}{}
+#'   \item{SEX_CODE}{}
+#'   \item{CLASS_LOW}{}
+#'   \item{CLASS_HIGH}{}
+#'   \item{FISH_COUNT}{}
+#'   \item{RAISING}{}
+#'   \item{RAISE_CODE}{}
+#' }
+"STD.TROP.YFT"
+
+#' The 'standardized' monthly size-frequency dataset for temperate tunas
+#'
+#' @format
+#' \describe{
+#'   \item{YEAR}{}
+#'   \item{QUARTER}{}
+#'   \item{MONTH_START}{}
+#'   \item{MONTH_END}{}
+#'   \item{FISHING_GROUND_CODE}{}
+#'   \item{FISHING_GROUND}{}
+#'   \item{FLEET_CODE}{}
+#'   \item{FLEET}{}
+#'   \item{FISHERY_TYPE_CODE}{}
+#'   \item{FISHERY_TYPE}{}
+#'   \item{FISHERY_GROUP_CODE}{}
+#'   \item{FISHERY_GROUP}{}
+#'   \item{FISHERY_CODE}{}
+#'   \item{FISHERY}{}
+#'   \item{GEAR_CODE}{}
+#'   \item{GEAR}{}
+#'   \item{SCHOOL_TYPE_CODE}{}
+#'   \item{IUCN_STATUS_CODE}{}
+#'   \item{IUCN_STATUS}{}
+#'   \item{SPECIES_WP_CODE}{}
+#'   \item{SPECIES_WP}{}
+#'   \item{SPECIES_GROUP_CODE}{}
+#'   \item{SPECIES_GROUP}{}
+#'   \item{SPECIES_CATEGORY_CODE}{}
+#'   \item{SPECIES_CATEGORY}{}
+#'   \item{SPECIES_CODE}{}
+#'   \item{SPECIES}{}
+#'   \item{SPECIES_SCIENTIFIC}{}
+#'   \item{SPECIES_FAMILY}{}
+#'   \item{SPECIES_ORDER}{}
+#'   \item{IS_IOTC_SPECIES}{}
+#'   \item{IS_SPECIES_AGGREGATE}{}
+#'   \item{IS_SSI}{}
+#'   \item{MEASURE_TYPE_CODE}{}
+#'   \item{MEASURE_TYPE}{}
+#'   \item{MEASURE_UNIT_CODE}{}
+#'   \item{WEIGHT}{}
+#'   \item{SEX_CODE}{}
+#'   \item{CLASS_LOW}{}
+#'   \item{CLASS_HIGH}{}
+#'   \item{FISH_COUNT}{}
+#'   \item{RAISING}{}
+#'   \item{RAISE_CODE}{}
+#' }
+"STD.TEMP"
 
 #' The 'standardized' monthly size-frequency dataset for billfish
 #'
