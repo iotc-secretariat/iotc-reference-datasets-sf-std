@@ -27,7 +27,7 @@ This will:
 
 -   load all necessary datasets (see above)
 -   build the package
--   upload the `.rda` dataset files and the built pacakge (as a `.tar.gz` file) onto the [*Downloads* section](https://bitbucket.org/iotc-ws/iotc-reference-datasets-sf-std/downloads/) of the BitBucket repository
+-   upload the `.rda` dataset files and the built package (as a `.tar.gz` file) onto the [*Downloads* section](https://bitbucket.org/iotc-ws/iotc-reference-datasets-sf-std/downloads/) of the BitBucket repository
 
 For this to work, it is necessary to configure in advance the `BITBUCKET_UPLOAD_SF_STD_DATASET_TOKEN` as an environment variable that should be assigned an access token created for the specific repository (with the `repository:write` OAuth 2.0 scope).
 
