@@ -2,10 +2,6 @@ library(iotc.base.common.data)
 library(iotc.base.common.std)
 library(iotc.data.reference.datasets.SF.raw)
 library(httr)
-library(lubridate)
-
-LAST_UPDATE = today(tzone = "UTC")
-usethis::use_data(LAST_UPDATE, overwrite = TRUE)
 
 SPECIES_CFG =
   query(
@@ -71,11 +67,11 @@ standardize = function(sf_data) {
   return(STANDARDIZED_SF)
 }
 
-STD.TEMP = standardize(iotc.data.reference.datasets.SF.raw::RAW.TEMP)
-usethis::use_data(STD.TEMP, overwrite = TRUE, compress = "gzip")
-
 STD.TROP = standardize(iotc.data.reference.datasets.SF.raw::RAW.TROP)
 usethis::use_data(STD.TROP, overwrite = TRUE, compress = "gzip")
+
+STD.TEMP = standardize(iotc.data.reference.datasets.SF.raw::RAW.TEMP)
+usethis::use_data(STD.TEMP, overwrite = TRUE, compress = "gzip")
 
 STD.BILL = standardize(iotc.data.reference.datasets.SF.raw::RAW.BILL)
 usethis::use_data(STD.BILL, overwrite = TRUE, compress = "gzip")
@@ -89,19 +85,49 @@ usethis::use_data(STD.SEER, overwrite = TRUE, compress = "gzip")
 STD.SHRK = standardize(iotc.data.reference.datasets.SF.raw::RAW.SHRK)
 usethis::use_data(STD.SHRK, overwrite = TRUE, compress = "gzip")
 
-BITBUCKET_REPO_URL = paste0("https://api.bitbucket.org/2.0/repositories/iotc-ws/iotc-reference-datasets-SF-std/downloads")
+LAST_UPDATE = Sys.Date()
 
-for(file in list.files("../data", pattern = "*.rda")) {
-  log_info(paste0("Uploading '", file, "' to BitBucket repository under ", BITBUCKET_REPO_URL))
+METADATA = list(
+  STD.SF = list(
+    DATA = nrow(
+      rbind(
+        STD.TROP,
+        STD.TEMP,
+        STD.BILL,
+        STD.NERI,
+        STD.SEER,
+        STD.SHRK
+      )
+    ),
+    LAST_UPDATE = LAST_UPDATE
+  )
+)
+usethis::use_data(METADATA, overwrite = TRUE, compress = "gzip")
 
-  upload_response =
-    POST(BITBUCKET_REPO_URL,
-         body = list(files = upload_file(paste0("../data/", file))),
-         add_headers(
-           Authorization = paste0("Bearer ", Sys.getenv("BITBUCKET_UPLOAD_SF_STD_DATASET_TOKEN"))
-         )
-    )
+TOKEN = Sys.getenv("BITBUCKET_UPLOAD_SF_STD_DATASET_TOKEN")
 
-  log_info(paste0("Upload response: ", upload_response))
+if(TOKEN == "") {
+  stop("No 'BITBUCKET_UPLOAD_SF_STD_DATASET_TOKEN' value found in system environment: cannot upload artifacts!")
+} else {
+  BITBUCKET_REPO_URL = paste0("https://api.bitbucket.org/2.0/repositories/iotc-ws/iotc-reference-datasets-SF-std/downloads")
+
+  FILES = list.files("../data", pattern = "*.rda")
+
+  if(length(FILES) == 0) {
+    stop("No .RDA files found: check that these have been produced and that you are running this script from the right directory (its container folder)")
+  }
+
+  for(file in FILES) {
+    log_info(paste0("Uploading '", file, "' to BitBucket repository under ", BITBUCKET_REPO_URL))
+
+    upload_response =
+      POST(BITBUCKET_REPO_URL,
+           body = list(files = upload_file(paste0("../data/", file))),
+           add_headers(
+             Authorization = paste0("Bearer ", TOKEN)
+           )
+      )
+
+    log_info(paste0("Upload response: [", status_code, "] / ", content(upload_response)))
+  }
 }
-
