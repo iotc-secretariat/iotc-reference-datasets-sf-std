@@ -66,31 +66,31 @@ standardize = function(sf_data) {
   return(STANDARDIZED_SF)
 }
 
-STD.TROP = standardize(iotc.data.reference.datasets.SF.raw::RAW.TROP)
+STD.TROP = decorate(standardize(iotc.data.reference.datasets.SF.raw::RAW.TROP), factorize = TRUE)
 usethis::use_data(STD.TROP, overwrite = TRUE, compress = "gzip")
 
-STD.TROP.BET = standardize(iotc.data.reference.datasets.SF.raw::RAW.TROP[SPECIES_CODE == "BET"])
+STD.TROP.BET = STD.TROP[SPECIES_CODE == "BET"]
 usethis::use_data(STD.TROP.BET, overwrite = TRUE, compress = "gzip")
 
-STD.TROP.SKJ = standardize(iotc.data.reference.datasets.SF.raw::RAW.TROP[SPECIES_CODE == "SKJ"])
+STD.TROP.SKJ = STD.TROP[SPECIES_CODE == "SKJ"]
 usethis::use_data(STD.TROP.SKJ, overwrite = TRUE, compress = "gzip")
 
-STD.TROP.YFT = standardize(iotc.data.reference.datasets.SF.raw::RAW.TROP[SPECIES_CODE == "YFT"])
+STD.TROP.YFT = STD.TROP[SPECIES_CODE == "YFT"]
 usethis::use_data(STD.TROP.YFT, overwrite = TRUE, compress = "gzip")
 
-STD.TEMP = standardize(iotc.data.reference.datasets.SF.raw::RAW.TEMP)
+STD.TEMP = decorate(standardize(iotc.data.reference.datasets.SF.raw::RAW.TEMP), factorize = TRUE)
 usethis::use_data(STD.TEMP, overwrite = TRUE, compress = "gzip")
 
-STD.BILL = standardize(iotc.data.reference.datasets.SF.raw::RAW.BILL)
+STD.BILL = decorate(standardize(iotc.data.reference.datasets.SF.raw::RAW.BILL), factorize = TRUE)
 usethis::use_data(STD.BILL, overwrite = TRUE, compress = "gzip")
 
-STD.NERI = standardize(iotc.data.reference.datasets.SF.raw::RAW.NERI)
+STD.NERI = decorate(standardize(iotc.data.reference.datasets.SF.raw::RAW.NERI), factorize = TRUE)
 usethis::use_data(STD.NERI, overwrite = TRUE, compress = "gzip")
 
-STD.SEER = standardize(iotc.data.reference.datasets.SF.raw::RAW.SEER)
+STD.SEER = decorate(standardize(iotc.data.reference.datasets.SF.raw::RAW.SEER), factorize = TRUE)
 usethis::use_data(STD.SEER, overwrite = TRUE, compress = "gzip")
 
-STD.SHRK = standardize(iotc.data.reference.datasets.SF.raw::RAW.SHRK)
+STD.SHRK = decorate(standardize(iotc.data.reference.datasets.SF.raw::RAW.SHRK), factorize = TRUE)
 usethis::use_data(STD.SHRK, overwrite = TRUE, compress = "gzip")
 
 LAST_UPDATE = Sys.Date()
