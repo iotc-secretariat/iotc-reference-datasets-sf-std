@@ -93,20 +93,26 @@ usethis::use_data(STD.SEER, overwrite = TRUE, compress = "gzip")
 STD.SHRK = decorate(standardize(iotc.data.reference.datasets.SF.raw::RAW.SHRK), factorize = TRUE)
 usethis::use_data(STD.SHRK, overwrite = TRUE, compress = "gzip")
 
+STD.ALL = data.table::rbindlist(
+  list(
+    STD.TROP,
+    STD.TEMP,
+    STD.BILL,
+    STD.NERI,
+    STD.SEER,
+    STD.SHRK
+  ),
+  use.names = TRUE, fill = TRUE
+)
+STD.ALL_AGG = STD.ALL[, .(FISH_COUNT = sum(FISH_COUNT)), keyby = setdiff(names(STD.ALL), c("MONTH_START", "MONTH_END", "FISH_COUNT"))]
+STD.ALL_AGG = STD.ALL_AGG[, c("SPECIES_SCIENTIFIC", "SPECIES_FAMILY", "SPECIES_ORDER", "IS_IOTC_SPECIES", "IS_SPECIES_AGGREGATE", "IS_SSI") := NULL]
+usethis::use_data(STD.ALL_AGG, overwrite = TRUE, compress = "gzip")
+
 LAST_UPDATE = Sys.Date()
 
 METADATA = list(
   STD.SF = list(
-    DATA = nrow(
-      rbind(
-        STD.TROP,
-        STD.TEMP,
-        STD.BILL,
-        STD.NERI,
-        STD.SEER,
-        STD.SHRK
-      )
-    ),
+    DATA = nrow(STD.ALL),
     LAST_UPDATE = LAST_UPDATE
   )
 )
