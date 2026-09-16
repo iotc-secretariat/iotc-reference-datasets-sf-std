@@ -106,6 +106,10 @@ STD.ALL = data.table::rbindlist(
 )
 STD.ALL_AGG = STD.ALL[, .(FISH_COUNT = sum(FISH_COUNT)), keyby = setdiff(names(STD.ALL), c("MONTH_START", "MONTH_END", "FISH_COUNT"))]
 STD.ALL_AGG = STD.ALL_AGG[, c("SPECIES_SCIENTIFIC", "SPECIES_FAMILY", "SPECIES_ORDER", "IS_IOTC_SPECIES", "IS_SPECIES_AGGREGATE", "IS_SSI") := NULL]
+cnames = colnames(STD.ALL_AGG)
+cl_cnames = cnames[endsWith(cnames, "_CODE")]
+cl_to_remove = sapply(cl_cnames, function(x){unlist(strsplit(x,"_CODE"))[1]}, USE.NAMES = F)
+STD.ALL_AGG = STD.ALL_AGG[,(cl_to_remove) := NULL]
 usethis::use_data(STD.ALL_AGG, overwrite = TRUE, compress = "gzip")
 
 LAST_UPDATE = Sys.Date()
